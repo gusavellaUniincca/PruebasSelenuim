@@ -56,6 +56,13 @@ class ExampleDetComTest (unittest.TestCase):
             'Content-Type': 'application/json'
         }
 
+
+
+        # 4. Esperar a que la ventana emergente aparezca completamente
+        WebDriverWait(driver, 20).until(
+            EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'otp-inputs-container')]//input"))
+        )
+
         # Enviar la solicitud POST
         response = requests.post(otp_url, json=payload, headers=headers)
 
@@ -67,11 +74,6 @@ class ExampleDetComTest (unittest.TestCase):
 
         print("otp:",response.json()['otp'])
         otp_code = response.json()['otp']
-
-        # 4. Esperar a que la ventana emergente aparezca completamente
-        WebDriverWait(driver, 20).until(
-            EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'otp-inputs-container')]//input"))
-        )
 
         # 5. Encontrar los campos del token e ingresar el código
         otp_fields = driver.find_elements(By.XPATH, "//div[contains(@class, 'otp-inputs-container')]//input")
