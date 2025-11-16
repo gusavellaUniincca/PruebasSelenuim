@@ -1,6 +1,6 @@
 # Pruebas Selenuim
 Pruebas en selenuim para aplicacion Core de rentas test Noviembre 2025
-
+```mermaid
 flowchart TD
     A[Inicio] --> B[Validar datos]
     B --> C{Datos correctos?}
