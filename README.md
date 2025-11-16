@@ -79,7 +79,7 @@ sequenceDiagram
     API-->>FE: Retorna JWT
     FE->>API: Petición con Bearer Token
     API-->>FE: Respuesta OK
-
+```
 Nombre del Proyecto
 
 Breve descripciÃ³n del proyecto, propÃ³sito y alcance.
