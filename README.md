@@ -42,7 +42,6 @@ Es ideal porque:
 
 Puedes usar este README como referencia o plantilla en tus propios proyectos.
 
-```mermaid
 classDiagram
     class User {
         +string name
@@ -56,8 +55,15 @@ classDiagram
     }
 
     User --> AuthService
-
+stateDiagram-v2
+    [*] --> Desconectado
+    Desconectado --> Autenticando
+    Autenticando --> Autenticado
+    Autenticando --> Error
+    Error --> Desconectado
 # Diagrama del flujo de Login
+
+
 
 A continuación se muestra el flujo de autenticación con JWT:
 
