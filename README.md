@@ -1,5 +1,14 @@
 # Pruebas Selenuim
 Pruebas en selenuim para aplicacion Core de rentas test Noviembre 2025
+
+flowchart TD
+    A[Inicio] --> B[Validar datos]
+    B --> C{Datos correctos?}
+    C -->|Sí| D[Procesar]
+    C -->|No| E[Mostrar error]
+    D --> F[Fin]
+    E --> F
+
 # Diagrama del flujo de Login
 
 A continuación se muestra el flujo de autenticación con JWT:
@@ -16,10 +25,3 @@ sequenceDiagram
     FE->>API: Petición con Bearer Token
     API-->>FE: Respuesta OK
 
-flowchart TD
-    A[Inicio] --> B[Validar datos]
-    B --> C{Datos correctos?}
-    C -->|Sí| D[Procesar]
-    C -->|No| E[Mostrar error]
-    D --> F[Fin]
-    E --> F
