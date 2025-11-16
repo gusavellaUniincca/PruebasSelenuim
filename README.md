@@ -43,17 +43,20 @@ Es ideal porque:
 Puedes usar este README como referencia o plantilla en tus propios proyectos.
 
 ---
+classDiagram
+    class User {
+        +string name
+        +string email
+        +login()
+    }
 
-# 🧩 **1. Flowchart — Diagrama de flujo**
+    class AuthService {
+        +generateJWT()
+        +validateToken()
+    }
 
-```mermaid
-flowchart TD
-    A[Inicio] --> B[Validar datos]
-    B --> C{Datos correctos?}
-    C -->|Sí| D[Procesar]
-    C -->|No| E[Mostrar error]
-    D --> F[EOL]
-    E --> F
+    User --> AuthService
+
 
 # Diagrama del flujo de Login
 
