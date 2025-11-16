@@ -80,3 +80,132 @@ sequenceDiagram
     FE->>API: Petición con Bearer Token
     API-->>FE: Respuesta OK
 
+Nombre del Proyecto
+
+Breve descripciÃ³n del proyecto, propÃ³sito y alcance.
+
+------------------------------------------------------------------------
+
+## ðŸ“š Tabla de Contenido
+
+1.  DescripciÃ³n General
+2.  Arquitectura
+3.  Flujos Principales
+4.  Modelado de Datos
+5.  Estados del Sistema
+6.  Cronograma del Proyecto
+7.  ContribuciÃ³n
+8.  Licencia
+
+------------------------------------------------------------------------
+
+## ðŸ§© DescripciÃ³n General
+
+ExplicaciÃ³n breve del proyecto y lo que resuelve.
+
+------------------------------------------------------------------------
+
+## ðŸ—ï¸ Arquitectura
+
+``` mermaid
+flowchart TD
+    A[Cliente] --> B[API Gateway]
+    B --> C[Servicio Auth]
+    B --> D[Servicio Principal]
+    C --> E[Base de Datos]
+    D --> E
+```
+
+------------------------------------------------------------------------
+
+## ðŸ”„ Flujos Principales
+
+### ðŸ” **Flujo de AutenticaciÃ³n (JWT)**
+
+``` mermaid
+sequenceDiagram
+    participant U as Usuario
+    participant A as API
+    participant DB as Base de Datos
+
+    U->>A: Enviar credenciales
+    A->>DB: Buscar usuario
+    DB-->>A: Datos del usuario
+    A-->>U: Retorna JWT
+```
+
+------------------------------------------------------------------------
+
+### ðŸ§¾ **Flujo del Proceso Principal**
+
+``` mermaid
+flowchart LR
+    A[Inicio] --> B[ValidaciÃ³n]
+    B -->|OK| C[Procesar]
+    B -->|Error| D[Mostrar error]
+    C --> E[Finalizar]
+```
+
+------------------------------------------------------------------------
+
+## ðŸ—„ï¸ Modelado de Datos
+
+### **Diagrama ER**
+
+``` mermaid
+erDiagram
+    USER ||--o{ ORDER : hace
+    ORDER ||--|{ PRODUCTO : contiene
+    USER {
+        int id
+        string nombre
+        string email
+    }
+    PRODUCTO {
+        int id
+        string nombre
+        float precio
+    }
+```
+
+------------------------------------------------------------------------
+
+## ðŸ§  Estados del Sistema
+
+``` mermaid
+stateDiagram-v2
+    [*] --> Inactivo
+    Inactivo --> Ejecutando
+    Ejecutando --> Error
+    Error --> Inactivo
+```
+
+------------------------------------------------------------------------
+
+## ðŸ“… Cronograma del Proyecto
+
+``` mermaid
+gantt
+    title Cronograma
+    dateFormat  YYYY-MM-DD
+
+    section Fase 1
+    PlanificaciÃ³n :a1, 2025-01-01, 7d
+    DiseÃ±o :after a1, 5d
+
+    section Fase 2
+    Backend :2025-01-10, 14d
+    Frontend :2025-01-15, 10d
+```
+
+------------------------------------------------------------------------
+
+## ðŸ¤ ContribuciÃ³n
+
+Explica cÃ³mo contribuir (PRs, issues, etc.)
+
+------------------------------------------------------------------------
+
+## ðŸ“„ Licencia
+
+Indica el tipo de licencia (MIT, Apache, etc.)
