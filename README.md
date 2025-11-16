@@ -55,7 +55,7 @@ classDiagram
     }
 
     User --> AuthService
-```mermaid    
+mermaid    
 stateDiagram-v2
     [*] --> Desconectado
     Desconectado --> Autenticando
