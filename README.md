@@ -52,7 +52,7 @@ flowchart TD
     B --> C{Datos correctos?}
     C -->|Sí| D[Procesar]
     C -->|No| E[Mostrar error]
-    D --> F
+    D --> F[EOL]
     E --> F
 
 # Diagrama del flujo de Login
