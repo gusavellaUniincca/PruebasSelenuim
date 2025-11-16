@@ -42,7 +42,7 @@ Es ideal porque:
 
 Puedes usar este README como referencia o plantilla en tus propios proyectos.
 
----
+```mermaid
 classDiagram
     class User {
         +string name
@@ -56,7 +56,6 @@ classDiagram
     }
 
     User --> AuthService
-
 
 # Diagrama del flujo de Login
 
