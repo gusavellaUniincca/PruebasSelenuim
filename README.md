@@ -15,3 +15,11 @@ sequenceDiagram
     API-->>FE: Retorna JWT
     FE->>API: Petición con Bearer Token
     API-->>FE: Respuesta OK
+
+flowchart TD
+    A[Inicio] --> B[Validar datos]
+    B --> C{Datos correctos?}
+    C -->|Sí| D[Procesar]
+    C -->|No| E[Mostrar error]
+    D --> F[Fin]
+    E --> F
